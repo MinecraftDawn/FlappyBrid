@@ -14,7 +14,7 @@ class Bird(pygame.sprite.Sprite):
         self.tick = 0
 
     def jump(self):
-        self.vel -= 10
+        self.vel = -6
         self.tick = 0
 
     def move(self):
@@ -24,8 +24,7 @@ class Bird(pygame.sprite.Sprite):
 
         if displacement > 16:
             displacement = 16
-
-        elif displacement < 0:
-            displacement -= 1
+        # elif displacement < 0:
+        #     displacement -= 1
 
         self.rect.y += displacement
