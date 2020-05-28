@@ -21,8 +21,8 @@ g = pygame.sprite.Group()
 g.add(bird)
 
 
-t = PipeGenerator()
-t.generate()
+pipeGenerator = PipeGenerator()
+
 
 while running:
     for event in pygame.event.get():
@@ -33,12 +33,16 @@ while running:
     if keys[pygame.K_SPACE]:
         bird.jump()
 
+
+
+
     bird.move()
-    t.move()
+    pipeGenerator.generate()
+    pipeGenerator.move()
 
     SCREEN.fill(BLACK)
     SCREEN.blit(bird.image, bird.rect)
-    t.draw(SCREEN)
+    pipeGenerator.draw(SCREEN)
 
     pygame.display.flip()
     clock.tick(30)
